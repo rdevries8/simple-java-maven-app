@@ -3,7 +3,7 @@ pipeline {
     stages {
        stage('set environment') {
             steps {
-                sh '/etc/bash.bashrc'
+                sh '/var/jenkins_home/env.sh'
             }
         }
         stage('Build') {
