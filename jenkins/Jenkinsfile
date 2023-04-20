@@ -1,6 +1,11 @@
 pipeline {
   agent any
     stages {
+       stage('set environment') {
+            steps {
+                sh '/etc/bash.bashrc'
+            }
+        }
         stage('Build') {
             steps {
                 sh '/opt/apache-maven-3.8.8/bin/mvn -B -DskipTests clean package'
